@@ -23,6 +23,13 @@ BuildRequires:  pkgconfig(Qt5Gui)
 
 BuildRequires:  cmake(ECM)
 BuildRequires:  cmake(KF5)
+BuildRequires:	cmake(KF5Parts)
+BuildRequires:	cmake(KF5KDELibs4Support)
+BuildRequires:	cmake(KF5CoreAddons)
+BuildRequires:	cmake(KF5WindowSystem)
+BuildRequires:	cmake(KF5I18n)
+BuildRequires:	cmake(KF5XmlGui)
+BuildRequires:	cmake(KF5IconThemes)
 
 BuildRequires:  boost-devel
 
