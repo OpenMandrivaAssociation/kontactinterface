@@ -4,12 +4,10 @@
 #
 #define debug_package %{nil}
 
-%define rel 1
-
 Summary:        Kontact Plugin Interface Library
 Name:           kontactinterface
-Version: 15.08.0
-Release:        %mkrel %rel
+Version:	15.08.0
+Release:        1
 License:        GPLv2+
 Group:          System/Base
 Source0:        http://fr2.rpmfind.net/linux/KDE/stable/plasma/%{name}-%{version}.tar.xz
@@ -23,13 +21,8 @@ BuildRequires:  pkgconfig(Qt5Concurrent)
 BuildRequires:  pkgconfig(Qt5Test)
 BuildRequires:  pkgconfig(Qt5Gui)
 
-BuildRequires:  kf5-macros
-BuildRequires:  ki18n-devel >= 5.12.0
-BuildRequires:  kcoreaddons-devel >= 5.12.0
-BuildRequires:  kparts-devel >= 5.12.0
-BuildRequires:  kwindowsystem-devel >= 5.12.0
-BuildRequires:  kxmlgui-devel >= 5.12.0
-BuildRequires:  kiconthemes-devel >= 5.12.0
+BuildRequires:  cmake(ECM)
+BuildRequires:  cmake(KF5)
 
 BuildRequires:  boost-devel
 
@@ -41,7 +34,7 @@ BuildRequires:	docbook-style-xsl
 Kontact Plugin Interface Library
 
 %files
-%_kf5_datadir/kservicetypes5/kontactplugin.desktop
+%_datadir/kservicetypes5/kontactplugin.desktop
 
 #--------------------------------------------------------------------
 
@@ -57,8 +50,8 @@ Requires:     %name = %version-%release
 Kontact Plugin Interface Library
 
 %files -n %libkf5kontactinterface
-%_kf5_libdir/libKF5KontactInterface.so.%{kf5kontactinterface_major}*
-%_kf5_libdir/libKF5KontactInterface.so.5
+%_libdir/libKF5KontactInterface.so.%{kf5kontactinterface_major}*
+%_libdir/libKF5KontactInterface.so.5
 
 #--------------------------------------------------------------------
 
@@ -76,11 +69,11 @@ This package contains header files needed if you wish to build applications
 based on %name.
 
 %files -n %kf5kontactinterface_devel
-%_kf5_includedir/KontactInterface
-%_kf5_includedir/kontactinterface_version.h
-%_kf5_libdir/libKF5KontactInterface.so
-%_kf5_libdir/cmake/KF5KontactInterface
-%_qt5_prefix/mkspecs/modules/qt_KontactInterface.pri
+%_includedir/KF5/KontactInterface
+%_includedir/KF5/kontactinterface_version.h
+%_libdir/libKF5KontactInterface.so
+%_libdir/cmake/KF5KontactInterface
+%_libdir/qt5/mkspecs/modules/qt_KontactInterface.pri
 
 #--------------------------------------------------------------------
 
@@ -89,38 +82,8 @@ based on %name.
 %apply_patches
 
 %build
-%cmake_kf5
-%make
+%cmake_kde5
+%ninja
 
 %install
-%makeinstall_std -C build
-
-%find_lang --all %{name}5
-
-
-
-%changelog
-* Wed Aug 19 2015 neoclust <neoclust> 15.08.0-1.mga6
-+ Revision: 865962
-- New version 15.08.0
-
-* Wed Aug 12 2015 neoclust <neoclust> 15.07.90-2.mga6
-+ Revision: 863681
-- Plasma Mass Rebuild - Rebuild for new Plasma
-
-* Sun Aug 09 2015 neoclust <neoclust> 15.07.90-1.mga6
-+ Revision: 861775
-- New version 15.07.90
-
-* Tue Jul 28 2015 neoclust <neoclust> 15.07.80-3.mga6
-+ Revision: 858734
-- Split files out of the library
-
-* Tue Jul 28 2015 neoclust <neoclust> 15.07.80-2.mga6
-+ Revision: 858448
-- Fix lib name
-
-* Tue Jul 28 2015 neoclust <neoclust> 15.07.80-1.mga6
-+ Revision: 858398
-- imported package kontactinterface
-
+%ninja_install -C build
