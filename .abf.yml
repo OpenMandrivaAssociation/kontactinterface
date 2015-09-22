@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   kontactinterface-15.08.0.tar.xz: f61caa50495e949a05510fc661511e2a2ed2373b
+sources:
+  kontactinterface-15.08.1.tar.xz: 58a337191b85912c9615d6291d563f597d8f0fbb
