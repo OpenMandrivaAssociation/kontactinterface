@@ -7,7 +7,7 @@
 Summary:        Kontact Plugin Interface Library
 Name:           kontactinterface
 Version:	15.12.0
-Release:	1
+Release:	2
 License:        GPLv2+
 Group:          System/Base
 Source0:        http://fr2.rpmfind.net/linux/KDE/stable/plasma/%{name}-%{version}.tar.xz
