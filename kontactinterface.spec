@@ -1,12 +1,8 @@
-#
-# Please do not update/rebuild/touch this package before asking first to mikala and/or neoclust
-# This package is part of the KDE Stack.
-#
 #define debug_package %{nil}
 
 Summary:        Kontact Plugin Interface Library
 Name:           kontactinterface
-Version:	15.12.3
+Version:	16.04.0
 Release:	1
 License:        GPLv2+
 Group:          System/Base
@@ -51,7 +47,7 @@ Kontact Plugin Interface Library
 
 #--------------------------------------------------------------------
 
-%define kf5kontactinterface_major 4
+%define kf5kontactinterface_major 5
 %define libkf5kontactinterface %mklibname kf5kontactinterface %{kf5kontactinterface_major}
 
 %package -n %libkf5kontactinterface
@@ -64,7 +60,6 @@ Kontact Plugin Interface Library
 
 %files -n %libkf5kontactinterface
 %_libdir/libKF5KontactInterface.so.%{kf5kontactinterface_major}*
-%_libdir/libKF5KontactInterface.so.5
 
 #--------------------------------------------------------------------
 
