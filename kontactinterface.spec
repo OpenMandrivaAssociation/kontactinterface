@@ -54,6 +54,7 @@ Kontact Plugin Interface Library
 Summary:      Kontact Plugin Interface Library
 Group:        System/Libraries
 Requires:     %name = %version-%release
+Obsoletes:    %mklibname kf5kontactinterface 4
 
 %description -n %libkf5kontactinterface
 Kontact Plugin Interface Library
