@@ -2,7 +2,7 @@
 
 Summary:        Kontact Plugin Interface Library
 Name:           kontactinterface
-Version:	17.03.80
+Version:	17.03.90
 Release:	1
 License:        GPLv2+
 Group:          System/Base
@@ -42,7 +42,7 @@ BuildRequires:	docbook-style-xsl
 %description
 Kontact Plugin Interface Library
 
-%files
+%files -f kontactinterfaces5.lang
 %_datadir/kservicetypes5/kontactplugin.desktop
 
 #--------------------------------------------------------------------
@@ -96,3 +96,4 @@ based on %name.
 
 %install
 %ninja_install -C build
+%find_lang kontactinterfaces5
