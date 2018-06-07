@@ -2,7 +2,7 @@
 
 Summary:        Kontact Plugin Interface Library
 Name:           kontactinterface
-Version:	 17.12.2
+Version:	 18.04.2
 Release:	1
 License:        GPLv2+
 Group:          System/Base
@@ -43,6 +43,8 @@ BuildRequires:	docbook-style-xsl
 Kontact Plugin Interface Library
 
 %files -f kontactinterfaces5.lang
+%{_sysconfdir}/xdg/kontactinterface.categories
+%{_sysconfdir}/xdg/kontactinterface.renamecategories
 %_datadir/kservicetypes5/kontactplugin.desktop
 
 #--------------------------------------------------------------------
