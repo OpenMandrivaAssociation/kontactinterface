@@ -2,7 +2,7 @@
 
 Summary:        Kontact Plugin Interface Library
 Name:           kontactinterface
-Version:	 18.07.90
+Version:	 18.08.0
 Release:	1
 License:        GPLv2+
 Group:          System/Base
