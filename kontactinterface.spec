@@ -2,7 +2,7 @@
 
 Summary:        Kontact Plugin Interface Library
 Name:           kontactinterface
-Version:	19.04.3
+Version:	19.07.80
 Release:	1
 License:        GPLv2+
 Group:          System/Base
@@ -43,8 +43,8 @@ BuildRequires:	docbook-style-xsl
 Kontact Plugin Interface Library
 
 %files -f kontactinterfaces5.lang
-%{_sysconfdir}/xdg/kontactinterface.categories
-%{_sysconfdir}/xdg/kontactinterface.renamecategories
+%{_datadir}/qlogging-categories5/kontactinterface.categories
+%{_datadir}/qlogging-categories5/kontactinterface.renamecategories
 %_datadir/kservicetypes5/kontactplugin.desktop
 
 #--------------------------------------------------------------------
