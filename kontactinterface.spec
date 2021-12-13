@@ -38,6 +38,10 @@ BuildRequires:	libxml2-utils
 BuildRequires:	docbook-dtds
 BuildRequires:	docbook-style-xsl
 
+# For QCH format docs
+BuildRequires: doxygen
+BuildRequires: qt5-assistant
+
 %description
 Kontact Plugin Interface Library
 
