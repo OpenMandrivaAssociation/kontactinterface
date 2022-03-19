@@ -1,7 +1,7 @@
 
 Summary:        Kontact Plugin Interface Library
 Name:           kontactinterface
-Version:	21.12.2
+Version:	22.03.80
 Release:	1
 License:        GPLv2+
 Group:          System/Base
@@ -84,7 +84,6 @@ based on %name.
 
 %files -n %kf5kontactinterface_devel
 %_includedir/KF5/KontactInterface
-%_includedir/KF5/kontactinterface_version.h
 %_libdir/libKF5KontactInterface.so
 %_libdir/cmake/KF5KontactInterface
 %_libdir/qt5/mkspecs/modules/qt_KontactInterface.pri
