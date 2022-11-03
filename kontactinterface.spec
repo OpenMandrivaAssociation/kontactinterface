@@ -1,8 +1,8 @@
 
 Summary:        Kontact Plugin Interface Library
 Name:           kontactinterface
-Version:	22.08.2
-Release:	2
+Version:	22.08.3
+Release:	1
 License:        GPLv2+
 Group:          System/Base
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
