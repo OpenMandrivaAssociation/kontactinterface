@@ -1,8 +1,8 @@
 
 Summary:        Kontact Plugin Interface Library
 Name:           kontactinterface
-Version:	22.12.3
-Release:	2
+Version:	23.03.90
+Release:	1
 License:        GPLv2+
 Group:          System/Base
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
@@ -52,23 +52,26 @@ Kontact Plugin Interface Library
 #--------------------------------------------------------------------
 
 %define kf5kontactinterface_major 5
-%define libkf5kontactinterface %mklibname kf5kontactinterface %{kf5kontactinterface_major}
+%define oldlibkf5kontactinterface %mklibname kf5kontactinterface 5
+%define libkf5kontactinterface %mklibname kpimkontactinterface
 
 %package -n %libkf5kontactinterface
 Summary:      Kontact Plugin Interface Library
 Group:        System/Libraries
 Requires:     %name = %version-%release
 Obsoletes:    %mklibname kf5kontactinterface 4
+Obsoletes:    %{mklibname kf5kontactinterface 5}
 
 %description -n %libkf5kontactinterface
 Kontact Plugin Interface Library
 
 %files -n %libkf5kontactinterface
-%_libdir/libKF5KontactInterface.so.%{kf5kontactinterface_major}*
+%_libdir/libKPim5KontactInterface.so.%{kf5kontactinterface_major}*
 
 #--------------------------------------------------------------------
 
-%define kf5kontactinterface_devel %mklibname kf5kontactinterface -d
+%define oldkf5kontactinterface_devel %mklibname kf5kontactinterface -d
+%define kf5kontactinterface_devel %mklibname kpim5kontactinterface -d
 
 %package -n %kf5kontactinterface_devel
 
@@ -76,14 +79,16 @@ Summary:        Devel stuff for %name
 Group:          Development/KDE and Qt
 Requires:       %libkf5kontactinterface = %version-%release
 Provides:       %name-devel = %{version}-%{release}
+%rename %oldkf5kontactinterface_devel
 
 %description -n %kf5kontactinterface_devel
 This package contains header files needed if you wish to build applications
 based on %name.
 
 %files -n %kf5kontactinterface_devel
-%_includedir/KF5/KontactInterface
-%_libdir/libKF5KontactInterface.so
+%_includedir/KPim5/KontactInterface
+%_libdir/libKPim5KontactInterface.so
+%_libdir/cmake/KPim5KontactInterface
 %_libdir/cmake/KF5KontactInterface
 %_libdir/qt5/mkspecs/modules/qt_KontactInterface.pri
 %doc %{_docdir}/qt5/*.{tags,qch}
