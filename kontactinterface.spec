@@ -1,7 +1,7 @@
 
 Summary:        Kontact Plugin Interface Library
 Name:           kontactinterface
-Version:	23.04.3
+Version:	23.08.0
 Release:	1
 License:        GPLv2+
 Group:          System/Base
@@ -89,7 +89,6 @@ based on %name.
 %_includedir/KPim5/KontactInterface
 %_libdir/libKPim5KontactInterface.so
 %_libdir/cmake/KPim5KontactInterface
-%_libdir/cmake/KF5KontactInterface
 %_libdir/qt5/mkspecs/modules/qt_KontactInterface.pri
 %doc %{_docdir}/qt5/*.{tags,qch}
 
