@@ -3,8 +3,8 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Summary:        Kontact Plugin Interface Library
-Name:           plasma6-kontactinterface
-Version:	25.04.0
+Name:           kontactinterface
+Version:	25.04.1
 Release:	%{?git:0.%{git}.}1
 License:        GPLv2+
 Group:          System/Base
@@ -51,10 +51,16 @@ BuildRequires:	docbook-style-xsl
 BuildRequires: doxygen
 BuildRequires: qt6-qttools-assistant
 
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+
+# Renamed after 6.0 2025-05-09
+%rename plasma6-kontactinterface
+
 %description
 Kontact Plugin Interface Library
 
-%files -f kontactinterfaces6.lang
+%files -f %{name}.lang
 %{_datadir}/qlogging-categories6/kontactinterface.categories
 %{_datadir}/qlogging-categories6/kontactinterface.renamecategories
 
@@ -92,18 +98,3 @@ based on %name.
 %files -n %kf6kontactinterface_devel
 %_includedir/KPim6/KontactInterface
 %_libdir/cmake/KPim6KontactInterface
-
-#--------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n kontactinterface-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-%find_lang kontactinterfaces6
