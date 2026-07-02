@@ -4,7 +4,7 @@
 
 Summary:        Kontact Plugin Interface Library
 Name:           kontactinterface
-Version:	26.04.2
+Version:	26.04.3
 Release:	%{?git:0.%{git}.}1
 License:        GPLv2+
 Group:          System/Base
