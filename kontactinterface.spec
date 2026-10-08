@@ -4,8 +4,8 @@
 
 Summary:        Kontact Plugin Interface Library
 Name:           kontactinterface
-Version:	26.08.1
-Release:	%{?git:0.%{git}.}2
+Version:	26.08.2
+Release:	%{?git:0.%{git}.}1
 License:        GPLv2+
 Group:          System/Base
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
